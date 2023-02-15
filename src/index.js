@@ -90,7 +90,6 @@ const text1 = ["Conrad", "Renaud", "Arec", "Geraldo"];
 class Message extends React.Component {
   render() {
     return <h1>{this.props.contenu}</h1>;
-    // return <h1>{this.props.contain}</h1>
   }
 }
 
@@ -104,7 +103,7 @@ class Messages extends React.Component {
 
 class Affiche extends React.Component {
   render() {
-    return <h1>{text}</h1>;
+    return <h1 className="color">{text}</h1>;
   }
 }
 
@@ -114,11 +113,35 @@ class App extends React.Component {
   }
 }
 
+/************   sans constructeur et sans le state    *************/
+// class Clock extends React.Component {
+//   render() {
+//     time.render(<Clock />);
+//     let d = new Date().toLocaleString();
+//     return <h1>{d}</h1>;
+//   }
+// }
+
+
+/**********   avec constructeur et le state, puis le setState   ************/ 
 class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { d: new Date().toLocaleString() };
+    this.state = {heure : "Nous sommes à HighFive, et il est :" };
+  }
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({ d: new Date().toLocaleString() });
+    }, 1000);
+  }
   render() {
     time.render(<Clock />);
-    let d = new Date().toLocaleString();
-    return <h1>{d}</h1>;
+    return (
+      <div>
+        <h1 className="clr" >{this.state.d}</h1>
+      </div>
+    );
   }
 }
 
