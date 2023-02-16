@@ -52,7 +52,7 @@ ul {
 
 #texte {
   border: solid gray;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   width: 40%;
   height: 20%;
   text-align: center;
@@ -61,30 +61,42 @@ ul {
   background-size: cover;
   background-position: center;
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 80%;
+  top: 100%;
   transform: translate(-50%, -50%);
+}
+
+#header {
+  // border: solid gray;
+  width: 100%;
+  height: 20rem;
+  // height: 30vh;
+  border-radius: .5rem;
+  background-image: url(./images/coder_school.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #root {
   border: solid gray;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   width: 40%;
   height: 20%;
   text-align: center;
-  background-image: url(./images/coder_school.jpg);
+  background-image: url(./images/unknow_coder.jfif);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: absolute;
   left: 50%;
-  top: 12%;
+  top: 100%;
   transform: translate(-50%, -50%);
 }
 
 #container {
-  border: .5px solid gray;
-  border-radius: .5rem;
+  border: 0.5px solid gray;
+  border-radius: 0.5rem;
   width: 15%;
   height: 30%;
   /* text-align: center; */
@@ -92,6 +104,16 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: absolute;
+  left: 10%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+}
+
+#main {
+  width: 80%;
+  margin-inline: auto;
+  background-color: beige;
 }
 
 .color {
@@ -99,5 +121,10 @@ ul {
 }
 
 .clr {
-  color: whitesmoke;
+  color: aqua;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
 }

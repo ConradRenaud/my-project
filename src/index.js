@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./index.scss";
 
 // class Square extends React.Component {
 // //   constructor(props) {
@@ -96,7 +96,8 @@ class Message extends React.Component {
 class Messages extends React.Component {
   render() {
     return text1.map((element) => {
-      return <Message contenu={element} />;
+      // eslint-disable-next-line jsx-a11y/anchor-is-valid
+      return <a href="#" className="link"> <Message contenu={element} /> </a>;
     });
   }
 }
@@ -127,8 +128,8 @@ class App extends React.Component {
 class Clock extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = {heure : "Nous sommes à HighFive, et il est :" };
     this.state = { d: new Date().toLocaleString() };
-    this.state = {heure : "Nous sommes à HighFive, et il est :" };
   }
   componentDidMount() {
     setInterval(() => {
@@ -139,7 +140,7 @@ class Clock extends React.Component {
     time.render(<Clock />);
     return (
       <div>
-        <h1 className="clr" >{this.state.d}</h1>
+        <h1 className="clr" >Nous sommes à HighFive, et il est : {this.state.d}</h1>
       </div>
     );
   }
@@ -147,11 +148,14 @@ class Clock extends React.Component {
 
 const text = "j'apprends le plus populaire framework de JavaS";
 
-const root = ReactDOM.createRoot(document.getElementById("container"));
-root.render(<App />);
+const link = ReactDOM.createRoot(document.getElementById("container"));
+link.render(<App />);
 
 const time = ReactDOM.createRoot(document.getElementById("root"));
 time.render(<Clock />);
 
 const affiche = ReactDOM.createRoot(document.getElementById("texte"));
 affiche.render(<Affiche />);
+
+const head = ReactDOM.createRoot(document.getElementById("header"));
+head.render();
