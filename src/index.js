@@ -2,90 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 
-// class Square extends React.Component {
-// //   constructor(props) {
-// //     super(props);
-// //     this.state = {
-// //       value: null,
-// //     };
-// //   }
-//   render() {
-//     return (
-//       //   <button className="square" onClick={function() {console.log('click');}}>
-//       <button
-//         className="square"
-//         onClick={() => this.props.onClick({value: "X"})}
-//       >
-//         {this.props.value}
-//       </button>
-//     );
-//   }
-// }
-
-// class Board extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             squares: Array(9).fill(null),
-//         };
-//     }
-//   renderSquare(i) {
-//     return (
-//     <Square
-//         value={this.state.squares[i]}
-//         onClick={() => this.handleClick(i)}
-//     />
-//     );
-//   }
-
-//   render() {
-//     const status = "Next player: X";
-
-//     return (
-//       <div>
-//         <div className="status">{status}</div>
-//         <div className="board-row">
-//           {this.renderSquare(0)}
-//           {this.renderSquare(1)}
-//           {this.renderSquare(2)}
-//         </div>
-//         <div className="board-row">
-//           {this.renderSquare(3)}
-//           {this.renderSquare(4)}
-//           {this.renderSquare(5)}
-//         </div>
-//         <div className="board-row">
-//           {this.renderSquare(6)}
-//           {this.renderSquare(7)}
-//           {this.renderSquare(8)}
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// class Game extends React.Component {
-//   render() {
-//     return (
-//       <div className="game">
-//         <div className="game-board">
-//           <Board />
-//         </div>
-//         <div className="game-info">
-//           <div>{/* status */}</div>
-//           <ol>{/* TODO */}</ol>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// // ========================================
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(<Game />);
-
-const text1 = ["Conrad", "Renaud", "Arec", "Geraldo"];
+// module.exports = {
+//   presets: [
+//     [
+//       "next/babel",
+//       {
+//         "preset-react": {
+//           runtime: "automatic",
+//           importSource: "@emotion/react",
+//           throwIfNamespace: false,
+//         },
+//       },
+//     ],
+//   ],
+//   plugins: ["@emotion/babel-plugin"],
+// };
 
 class Message extends React.Component {
   render() {
@@ -96,8 +27,11 @@ class Message extends React.Component {
 class Messages extends React.Component {
   render() {
     return text1.map((element) => {
-      // eslint-disable-next-line jsx-a11y/anchor-is-valid
-      return <a href="#" className="link"> <Message contenu={element} /> </a>;
+      return (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
+        <li><a href="#" className="link"> <Message contenu={element} /> </a>
+        </li>
+      );
     });
   }
 }
@@ -107,6 +41,34 @@ class Affiche extends React.Component {
     return <h1 className="color">{text}</h1>;
   }
 }
+
+class Logo extends React.Component {
+  // constructor() {
+  //   super();
+  //   this.state = { throwIfNamespace: false };
+  // }
+  render() {
+    return (
+      <svg viewBox="0 0 500 500" className="logo">
+        <defs>
+          <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
+        </defs>
+        <text className="fsize" dy="120" textLength="1220">
+          <textPath xlinkHref="#textcircle">
+            °HIGH-FIVE UNIVERSITY COTONOU°
+          </textPath>
+        </text>
+      </svg>
+    );
+  }
+}
+
+// pour highfive de Eric
+// class Highfive extends React.Component {
+//   render() {
+//     return <h2>HIGHFIVE</h2>;
+//   }
+// }
 
 class App extends React.Component {
   render() {
@@ -123,8 +85,7 @@ class App extends React.Component {
 //   }
 // }
 
-
-/**********   avec constructeur et le state, puis le setState   ************/ 
+/**********   avec constructeur et le state, puis le setState   ************/
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -140,15 +101,16 @@ class Clock extends React.Component {
     time.render(<Clock />);
     return (
       <div>
-        <h1 className="clr" >Nous sommes à HighFive, et il est : {this.state.d}</h1>
+        <h1 className="clr">Nous sommes à HighFive, et il est : {this.state.d}</h1>
       </div>
     );
   }
 }
 
+const text1 = ["About", "Formations", "Candidature", "Login"];
 const text = "j'apprends le plus populaire framework de JavaS";
 
-const link = ReactDOM.createRoot(document.getElementById("container"));
+const link = ReactDOM.createRoot(document.getElementById("container_liens"));
 link.render(<App />);
 
 const time = ReactDOM.createRoot(document.getElementById("root"));
@@ -159,3 +121,12 @@ affiche.render(<Affiche />);
 
 const head = ReactDOM.createRoot(document.getElementById("header"));
 head.render();
+
+// const exo = ReactDOM.createRoot(document.getElementById("exos"));
+// exo.render();
+
+const logo = ReactDOM.createRoot(document.getElementById("logo_anim"));
+logo.render(<Logo />);
+
+// const Hfive = ReactDOM.createRoot(document.getElementById("hfive_water"));
+// Hfive.render(<Highfive />);
