@@ -24,6 +24,12 @@ class Messages extends React.Component {
   }
 }
 
+// renvoie l'affichage du composant <App />
+class App extends React.Component {
+  render() {
+    return <Messages />;
+  }
+}
 
 // pour afficher la phrase : "j'apprends ...."
 class Affiche extends React.Component {
@@ -41,7 +47,7 @@ class Logo extends React.Component {
         <defs>
           <path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
         </defs>
-        {/* on a dû mettre dy=0 et textLength aussi = 0 avant de pouvoir afficher convenablement le logo sur la page */}
+        {/* on a dû mettre dy=0 et textLength=0 avant de pouvoir afficher convenablement le logo sur la page */}
         <text className="fsize" dy="0" textLength="0">
           <textPath xlinkHref = "#textcircle">
             °HIGH-FIVE UNIVERSITY COTONOU°
@@ -64,12 +70,6 @@ class Highfive extends React.Component {
   };
 }
 
-// renvoie l'affichage du composant <App />
-class App extends React.Component {
-  render() {
-    return <Messages />;
-  }
-}
 
 /************   sans constructeur et sans le state    *************/
 // class Clock extends React.Component {
@@ -254,6 +254,7 @@ render() {
 
 
 const text1 = ["About", "Formations", "Candidature", "Login"];
+
 const text = "j'apprends le plus populaire framework de JavaS";
 
 const link = ReactDOM.createRoot(document.getElementById("container_liens"));
